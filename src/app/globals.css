@@ -1,26 +1,87 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Colors */
+  --color-primary: #1A5F7A;
+  --color-primary-light: #3A8891;
+  --color-secondary: #E6D2AA;
+  --color-secondary-dark: #D4BC79;
+  --color-accent: #C27664;
+  --color-accent-light: #D9938A;
+  
+  /* Background & Text Colors */
+  --color-background-light: #F8F4EA;
+  --color-background-dark: #2C3333;
+  --color-text: #395B64;
+  
+  /* Gradient */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  
+  /* Background & Foreground */
+  --background: var(--color-background-light);
+  --foreground: var(--color-text);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Remove or comment out this section
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--neutral-950);
+    --foreground: var(--neutral-100);
   }
 }
+*/
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Kaisei Opti', serif;
+  font-weight: 500;
+}
+
+/* Custom Utility Classes */
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6 lg:px-8;
+  }
+  
+  .heading-xl {
+    @apply font-serif text-4xl md:text-5xl lg:text-6xl font-medium;
+  }
+  
+  .heading-lg {
+    @apply font-serif text-3xl md:text-4xl font-medium;
+  }
+  
+  .heading-md {
+    @apply font-serif text-2xl md:text-3xl font-medium;
+  }
+  
+  .heading-sm {
+    @apply font-serif text-xl md:text-2xl font-medium;
+  }
+  
+  .text-body {
+    @apply font-sans text-base leading-relaxed;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-primary hover:bg-teal-light text-white px-6 py-3 rounded-md transition-all duration-300 inline-block;
+  }
+  
+  .btn-secondary {
+    @apply bg-sand hover:bg-sand-dark text-slate px-6 py-3 rounded-md transition-all duration-300 inline-block;
+  }
+  
+  .btn-accent {
+    @apply bg-terracotta hover:bg-terracotta-light text-white px-6 py-3 rounded-md transition-all duration-300 inline-block;
+  }
 }
