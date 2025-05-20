@@ -285,8 +285,14 @@ const RoomsPreview = () => {
     <section 
       ref={sectionRef}
       className="py-20 bg-ivory overflow-hidden"
+      id="rooms"
     >
       <div className="container mx-auto px-4">
+        {/* Title Header */}
+        <div className="text-center mb-3">
+          <h4 className="text-terracotta font-medium tracking-wider uppercase text-sm">Our Accommodations</h4>
+        </div>
+        
         {/* Section Heading */}
         <div ref={headingRef} className="text-center mb-12">
           <h2 className="heading-lg text-teal mb-4">

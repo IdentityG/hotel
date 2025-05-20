@@ -158,6 +158,7 @@ const AboutSection = () => {
     <section 
       ref={sectionRef}
       className="py-20 bg-ivory overflow-hidden"
+      id="about"
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
@@ -169,6 +170,11 @@ const AboutSection = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
+              {/* Title Header */}
+              <div className="mb-3">
+                <h4 className="text-terracotta font-medium tracking-wider uppercase text-sm">Our Story</h4>
+              </div>
+              
               <h2 ref={headingRef} className="heading-lg text-teal mb-6">
                 About Our <span className="text-sand-dark">Luxury Lodge</span>
               </h2>
@@ -197,15 +203,34 @@ const AboutSection = () => {
                 viewport={{ once: true }}
               >
                 <div className="flex items-center gap-2 bg-teal/10 px-4 py-2 rounded-md">
-                  <Image src="/window.svg" alt="Eco-friendly" width={20} height={20} />
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-teal">
+                    <path d="M2 22c1.25-1.25 2.5-2.5 3.5-2.5 1.5 0 2 1.5 3 1.5 1 0 1.5-1.5 3-1.5s2 1.5 3 1.5c1 0 1.5-1.5 3-1.5s2 1.5 3 1.5c1 0 2.25-1.25 3.5-2.5" />
+                    <path d="M12 2v8" />
+                    <path d="M8 6l4-4 4 4" />
+                    <path d="M10 10a2 2 0 1 1 4 0c0 1.5-2 2-2 6" />
+                    <path d="M12 18v2" />
+                  </svg>
                   <span className="text-teal text-sm font-medium">Eco-friendly</span>
                 </div>
                 <div className="flex items-center gap-2 bg-sand/20 px-4 py-2 rounded-md">
-                  <Image src="/globe.svg" alt="Award-winning" width={20} height={20} />
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-sand-dark">
+                    <circle cx="12" cy="8" r="6" />
+                    <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                    <path d="M8 8h.01" />
+                    <path d="M16 8h.01" />
+                    <path d="M12 10h.01" />
+                    <path d="M11 6a1 1 0 0 1 2 0" />
+                  </svg>
                   <span className="text-slate text-sm font-medium">Award-winning</span>
                 </div>
                 <div className="flex items-center gap-2 bg-terracotta/10 px-4 py-2 rounded-md">
-                  <Image src="/file.svg" alt="Luxury" width={20} height={20} />
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-terracotta">
+                    <path d="M12 2L2 7l10 5 10-5" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                    <path d="M12 22v-5" />
+                    <path d="M7 4.5l10 5" />
+                  </svg>
                   <span className="text-terracotta text-sm font-medium">Luxury</span>
                 </div>
               </motion.div>
